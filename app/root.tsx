@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import {
   isRouteErrorResponse,
   Links,
@@ -5,13 +6,12 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useNavigate,
 } from "react-router";
 
 import type { Route } from "./+types/root";
 import "./app.css";
 import AppLayout from "./components/layout";
-import { useEffect } from "react";
-import React from "react";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -45,7 +45,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  const [isReady, setIsReady] = React.useState(false);
+  const navigate = useNavigate();
+  const [booted, setBooted] = useState(false);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -55,18 +56,15 @@ export default function App() {
 
     if (redirect) {
       const realPath = decodeURIComponent(redirect);
-      window.history.replaceState(
-        null,
-        "",
-        "/stella-sora-library" + realPath
-      );
+      window.history.replaceState(null, "", "/stella-sora-library" + realPath);
+      navigate(realPath, { replace: true });
     }
 
-    setTimeout(() => setIsReady(true), 0);
-  }, []);
+    setBooted(true);
+  }, [navigate]);
 
-  if (!isReady) return null;
-  
+  if (!booted) return null;
+
   return (
     <AppLayout>
       <Outlet />
