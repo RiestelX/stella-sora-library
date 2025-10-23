@@ -1,3 +1,11 @@
+const params = new URLSearchParams(window.location.search);
+const redirect = params.get("redirect");
+
+if (redirect) {
+  const realPath = decodeURIComponent(redirect);
+  window.history.replaceState(null, "", "/stella-sora-library" + realPath);
+}
+
 import {
   isRouteErrorResponse,
   Links,
