@@ -1,16 +1,3 @@
-const params = new URLSearchParams(window.location.search);
-const redirect = params.get("redirect");
-
-if (typeof window !== "undefined") {
-  const params = new URLSearchParams(window.location.search);
-  const redirect = params.get("redirect");
-
-  if (redirect) {
-    const realPath = decodeURIComponent(redirect);
-    window.history.replaceState(null, "", "/stella-sora-library" + realPath);
-  }
-}
-
 import {
   isRouteErrorResponse,
   Links,
@@ -23,6 +10,7 @@ import {
 import type { Route } from "./+types/root";
 import "./app.css";
 import AppLayout from "./components/layout";
+import { useEffect } from "react";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -56,6 +44,22 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
+    useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const params = new URLSearchParams(window.location.search);
+    const redirect = params.get("redirect");
+
+    if (redirect) {
+      const realPath = decodeURIComponent(redirect);
+      window.history.replaceState(
+        null,
+        "",
+        "/stella-sora-library" + realPath
+      );
+    }
+  }, []);
+  
   return (
     <AppLayout>
       <Outlet />
