@@ -11,6 +11,7 @@ import type { Route } from "./+types/root";
 import "./app.css";
 import AppLayout from "./components/layout";
 import { useEffect } from "react";
+import React from "react";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -44,7 +45,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-    useEffect(() => {
+  const [isReady, setIsReady] = React.useState(false);
+
+  useEffect(() => {
     if (typeof window === "undefined") return;
 
     const params = new URLSearchParams(window.location.search);
@@ -58,7 +61,11 @@ export default function App() {
         "/stella-sora-library" + realPath
       );
     }
+
+    setTimeout(() => setIsReady(true), 0);
   }, []);
+
+  if (!isReady) return null;
   
   return (
     <AppLayout>
