@@ -1,12 +1,16 @@
 {
   "name": "stella-sora-library",
+  "version": "0.1.0",
+  "homepage": "https://riestelx.github.io/stella-sora-library",
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "react-router build --ssr=false",
+    "build": "react-router build",
     "dev": "react-router dev",
     "start": "react-router-serve ./build/server/index.js",
-    "typecheck": "react-router typegen && tsc"
+    "typecheck": "react-router typegen && tsc",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@react-router/node": "^7.9.2",
@@ -25,11 +29,11 @@
     "@types/react": "^19.1.13",
     "@types/react-dom": "^19.1.9",
     "autoprefixer": "^10.4.21",
+    "gh-pages": "^6.3.0",
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.16",
     "typescript": "^5.9.2",
     "vite": "^7.1.7",
     "vite-tsconfig-paths": "^5.1.4"
-  },
-  "homepage": "https://riestelx.github.io/stella-sora-library/"
+  }
 }
