@@ -6,14 +6,15 @@
   </head>
   <body>
     <script>
-      const redirectTo =
-        location.protocol +
-        "//" +
-        location.host +
-        "/stella-sora-library/" +
-        (location.search || "") +
-        (location.hash || "");
-      window.location.replace(redirectTo);
+      const path = window.location.pathname.replace(
+        /^\/stella-sora-library/,
+        ""
+      );
+      const search = window.location.search;
+      const hash = window.location.hash;
+
+      window.location.replace("/stella-sora-library/?" + encodeURIComponent(path + search + hash));
+      
     </script>
   </body>
 </html>
