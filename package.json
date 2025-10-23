@@ -10,6 +10,7 @@
     "start": "react-router-serve ./build/server/index.js",
     "typecheck": "react-router typegen && tsc",
     "predeploy": "npm run build",
+    "postbuild": "cp build/client/index.html build/client/404.html",
     "deploy": "gh-pages -d build/client"
   },
   "dependencies": {
