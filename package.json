@@ -1,7 +1,7 @@
 {
   "name": "stella-sora-library",
   "version": "0.1.0",
-  "homepage": "https://riestelx.github.io/stella-sora-library",
+  "homepage": "https://riestelx.github.io/stella-sora-library/",
   "private": true,
   "type": "module",
   "scripts": {
