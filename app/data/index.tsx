@@ -22,7 +22,7 @@ export const trekkers: TrekkerDetail[] = Object.entries(trekkerModules).map(([pa
 
   return {
     ...data,
-    icon: `${import.meta.env.BASE_URL}/icons/trekker/icon_${data.id}.png`,
+    icon: `${import.meta.env.BASE_URL}icons/trekker/icon_${data.id}.png`,
     potential,
   } satisfies TrekkerDetail;
 });

@@ -40,7 +40,7 @@ export default function Trekker() {
   });
 
   return (
-    <div className="p-6 min-h-screen text-white">
+    <div className="min-h-screen text-white">
       <h2 className="text-2xl font-bold mb-4 tracking-wide">
         Trekker <span className="text-gray-400 text-sm">({filteredTrekkers.length} total)</span>
       </h2>
