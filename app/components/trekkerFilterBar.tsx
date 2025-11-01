@@ -38,7 +38,7 @@ export default function TrekkerFilterBar({ filters, onChange, onReset }: Trekker
             className={`p-1 rounded ${filters.element === el ? "bg-blue-500" : "hover:bg-gray-700"}`}
           >
             <img
-              src={`/icons/element/Icon_${el}.png`}
+              src={`${import.meta.env.BASE_URL}/icons/element/Icon_${el}.png`}
               className="w-8 h-8"
             />
           </button>
@@ -65,7 +65,7 @@ export default function TrekkerFilterBar({ filters, onChange, onReset }: Trekker
         {[{ label: <Star size={16} />, value: "Combat Type" }, ...TREKKER_OPTIONS.combatTypes.map(ct => ({
           label: (
             <img
-              src={`/icons/combat/${ct.toLowerCase()}.png`}
+              src={`${import.meta.env.BASE_URL}/icons/combat/${ct.toLowerCase()}.png`}
               className="w-5 h-5"
             />
           ),
