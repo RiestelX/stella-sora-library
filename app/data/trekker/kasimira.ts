@@ -1,5 +1,5 @@
-import type { ExtendedTrekkerDetail } from "../trekkerDetail";
-import { RarityEnum, ElementEnum, CombatTypeEnum, FeatureTypeEnum, FactionEnum, StyleEnum } from "../trekkerDetail";
+import type { ExtendedTrekkerInterface } from "../trekkerInterface";
+import { RarityEnum, ElementEnum, CombatTypeEnum, FeatureTypeEnum, FactionEnum, StyleEnum } from "../trekkerInterface";
 
 export default {
   id: "kasimira",
@@ -10,4 +10,4 @@ export default {
   featureType: FeatureTypeEnum.Versatile,
   faction: FactionEnum["White Cat Troupe"],
   style: StyleEnum.Adventurous
-} satisfies ExtendedTrekkerDetail;
+} satisfies ExtendedTrekkerInterface;

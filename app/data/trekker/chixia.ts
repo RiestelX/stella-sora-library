@@ -1,5 +1,5 @@
-import type { ExtendedTrekkerDetail } from "../trekkerDetail";
-import { RarityEnum, ElementEnum, CombatTypeEnum, FeatureTypeEnum, FactionEnum, StyleEnum } from "../trekkerDetail";
+import type { ExtendedTrekkerInterface } from "../trekkerInterface";
+import { RarityEnum, ElementEnum, CombatTypeEnum, FeatureTypeEnum, FactionEnum, StyleEnum } from "../trekkerInterface";
 
 export default {
   id: "chixia",
@@ -10,4 +10,4 @@ export default {
   featureType: FeatureTypeEnum.Versatile,
   faction: FactionEnum["Yunji Studio"],
   style: StyleEnum.Collector
-} satisfies ExtendedTrekkerDetail;
+} satisfies ExtendedTrekkerInterface;

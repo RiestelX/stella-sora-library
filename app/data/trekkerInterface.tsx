@@ -58,7 +58,7 @@ export interface TrekkerPotentials {
   support: PotentialNode;
 }
 
-export interface TrekkerDetail {
+export interface TrekkerInterface {
   id: string;
   name: string;
   rarity: Rarity;
@@ -109,7 +109,7 @@ export interface TrekkerArchive {
   cvexcerpt: Record<string, { title: string; desc: string }>;
 }
 
-export interface ExtendedTrekkerDetail extends TrekkerDetail {
+export interface ExtendedTrekkerInterface extends TrekkerInterface {
   profile?: string;
   stats?: TrekkerStats;
   skills?: {

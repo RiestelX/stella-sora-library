@@ -1,5 +1,5 @@
 import { RotateCcw, Star } from "lucide-react";
-import { TREKKER_OPTIONS } from "../data/trekkerDetail";
+import { TREKKER_OPTIONS } from "../data/trekkerInterface";
 
 interface TrekkerFilterBarProps {
   filters: {

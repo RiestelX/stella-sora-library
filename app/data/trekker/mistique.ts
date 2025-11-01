@@ -1,5 +1,5 @@
-import type { ExtendedTrekkerDetail } from "../trekkerDetail";
-import { RarityEnum, ElementEnum, CombatTypeEnum, FeatureTypeEnum, FactionEnum, StyleEnum } from "../trekkerDetail";
+import type { ExtendedTrekkerInterface } from "../trekkerInterface";
+import { RarityEnum, ElementEnum, CombatTypeEnum, FeatureTypeEnum, FactionEnum, StyleEnum } from "../trekkerInterface";
 
 export default {
   id: "mistique",
@@ -10,4 +10,4 @@ export default {
   featureType: FeatureTypeEnum.Versatile,
   faction: FactionEnum["Scarlet Sights Media"],
   style: StyleEnum.Creative
-} satisfies ExtendedTrekkerDetail;
+} satisfies ExtendedTrekkerInterface;

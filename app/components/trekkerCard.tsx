@@ -1,4 +1,4 @@
-import type { TrekkerDetail } from "~/data/trekkerDetail";
+import type { TrekkerInterface } from "~/data/trekkerInterface";
 
 const featureColors: Record<string, string> = {
   Vanguard: "#E66696",
@@ -33,7 +33,7 @@ function StarIcon() {
   );
 }
 
-export default function TrekkerCard({ trekker }: { trekker: TrekkerDetail }) {
+export default function TrekkerCard({ trekker }: { trekker: TrekkerInterface }) {
   const featureColor = featureColors[trekker.featureType] || "#888";
   const rarityGradient =
     rarityGradients[trekker.rarity] || "from-gray-300 to-gray-100";

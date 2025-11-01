@@ -1,8 +1,8 @@
-import type { TrekkerDetail, TrekkerPotentials } from "./trekkerDetail";
+import type { TrekkerInterface, TrekkerPotentials } from "./trekkerInterface";
 
 const allModules = import.meta.glob("./trekker/*.{ts,json}", { eager: true });
 
-const trekkerModules: Record<string, TrekkerDetail> = {};
+const trekkerModules: Record<string, TrekkerInterface> = {};
 const potentialModules: Record<string, TrekkerPotentials> = {};
 
 for (const [path, mod] of Object.entries(allModules)) {
@@ -11,11 +11,11 @@ for (const [path, mod] of Object.entries(allModules)) {
   if (path.includes("_potentials")) {
     potentialModules[path] = content as TrekkerPotentials;
   } else {
-    trekkerModules[path] = content as TrekkerDetail;
+    trekkerModules[path] = content as TrekkerInterface;
   }
 }
 
-export const trekkers: TrekkerDetail[] = Object.entries(trekkerModules).map(([path, data]) => {
+export const trekkers: TrekkerInterface[] = Object.entries(trekkerModules).map(([path, data]) => {
   const name = path.split("/").pop()?.replace(/\.(ts|json)$/, "") ?? "";
   const potentialKey = `./trekker/${name}_potentials.json`;
   const potential = potentialModules[potentialKey];
@@ -24,5 +24,5 @@ export const trekkers: TrekkerDetail[] = Object.entries(trekkerModules).map(([pa
     ...data,
     icon: `${import.meta.env.BASE_URL}icons/trekker/icon_${data.id}.png`,
     potential,
-  } satisfies TrekkerDetail;
+  } satisfies TrekkerInterface;
 });

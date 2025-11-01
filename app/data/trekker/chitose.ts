@@ -1,4 +1,4 @@
-import type { ExtendedTrekkerDetail } from "../trekkerDetail";
+import type { ExtendedTrekkerInterface } from "../trekkerInterface";
 import {
   RarityEnum,
   ElementEnum,
@@ -6,7 +6,7 @@ import {
   FeatureTypeEnum,
   FactionEnum,
   StyleEnum,
-} from "../trekkerDetail";
+} from "../trekkerInterface";
 
 export default {
   id: "chitose",
@@ -151,4 +151,4 @@ export default {
       },
     },
   },
-} satisfies ExtendedTrekkerDetail;
+} satisfies ExtendedTrekkerInterface;
