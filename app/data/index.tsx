@@ -22,7 +22,7 @@ export const trekkers: TrekkerDetail[] = Object.entries(trekkerModules).map(([pa
 
   return {
     ...data,
-    icon: `/stella-sora-library/assets/icons/trekker/icon_${data.id}.png`,
+    icon: `/icons/trekker/icon_${data.id}.png`,
     potential,
   } satisfies TrekkerDetail;
 });

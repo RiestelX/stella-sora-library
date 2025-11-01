@@ -6,7 +6,7 @@ import {
   BarChart3,
   Info,
 } from "lucide-react";
-import logo from "../../assets/icons/game-icon.webp";
+import logo from "/icons/game-icon.webp";
 
 export default function Sidebar() {
   const links = [

@@ -64,7 +64,7 @@ export default function TrekkerCard({ trekker }: { trekker: TrekkerDetail }) {
               style={{ backgroundColor: "#2E4B84" }}
             >
               <img
-                src={`/stella-sora-library/assets/icons/combat/${trekker.combatType.toLowerCase()}.png`}
+                src={`/icons/combat/${trekker.combatType.toLowerCase()}.png`}
                 alt={trekker.combatType}
                 className="w-3.5 h-3.5"
               />
@@ -84,7 +84,7 @@ export default function TrekkerCard({ trekker }: { trekker: TrekkerDetail }) {
       {/* element icon */}
       <div className="absolute -top-0.5 -left-0.5 z-20 drop-shadow-md">
         <img
-          src={`/stella-sora-library/assets/icons/element/icon_common_${elementIcons[
+          src={`/icons/element/Icon_common_${elementIcons[
             trekker.element
           ].toLowerCase()}.png`}
           alt={trekker.element}
