@@ -40,6 +40,42 @@ export const FeatureTypeEnum = Object.fromEntries(TREKKER_OPTIONS.featureTypes.m
 export const FactionEnum = Object.fromEntries(TREKKER_OPTIONS.factions.map(f => [f, f])) as { [K in Faction]: K };
 export const StyleEnum = Object.fromEntries(TREKKER_OPTIONS.styles.map(s => [s, s])) as { [K in Style]: K };
 
+export const TrekkerTierUpMaterialEnum = {
+  GrotesqueDancer: {
+    Basic: "basic_backstage_ragged_hat.png",
+    Intermediate: "intermediate_spotlight_bowler.png",
+    Advanced: "advanced_exeunt_bowler.png",
+  },
+  EvernightEmberflies: {
+    Basic: "basic_faint_wick.png",
+    Intermediate: "intermediate_lumen_essence.png",
+    Advanced: "advanced_eternal_gloom_core.png",
+  },
+  CountOfTheDuloos: {
+    Basic: "basic_counts_rewards.png",
+    Intermediate: "intermediate_counts_cellaring.png",
+    Advanced: "advanced_counts_gift.png",
+  },
+} as const;
+
+export const TrekkerSkillMaterialEnum = {
+  RhythmGameCartridge: {
+    Basic: "basic_tapping_game_cartridge.png",
+    Intermediate: "intermediate_rhythm_game_cartridge.png",
+    Advanced: "advanced_magic_sound_game_cartridge.png",
+  },
+  ShooterGameCartridge: {
+    Basic: "basic_shooter_game_cartridge.png",
+    Intermediate: "intermediate_barrage_game_cartridge.png",
+    Advanced: "advanced_demon_bee_game_cartridge.png",
+  },
+  FightingGameCartridge: {
+    Basic: "basic_kung_fu_game_cartridge.png",
+    Intermediate: "intermediate_fighting_game_cartridge.png",
+    Advanced: "advanced_phantom_game_catridge.png",
+  },
+} as const;
+
 export type Rarity = (typeof TREKKER_OPTIONS.rarities)[number];
 export type Element = (typeof TREKKER_OPTIONS.elements)[number];
 export type CombatType = (typeof TREKKER_OPTIONS.combatTypes)[number];
@@ -97,7 +133,6 @@ export interface SkillDetail {
 }
 
 export interface TrekkerStats {
-  levelCap: number;
   hp: number;
   atk: number;
   def: number;
@@ -109,6 +144,19 @@ export interface TrekkerArchive {
   cvexcerpt: Record<string, { title: string; desc: string }>;
 }
 
+export interface TrekkerMaterial {
+  tierUpTrial: {
+    Basic: string;
+    Intermediate: string;
+    Advanced: string;
+  };
+  skillTrial: {
+    Basic: string;
+    Intermediate: string;
+    Advanced: string;
+  }
+}
+
 export interface ExtendedTrekkerInterface extends TrekkerInterface {
   profile?: string;
   stats?: TrekkerStats;
@@ -118,6 +166,6 @@ export interface ExtendedTrekkerInterface extends TrekkerInterface {
     support: SkillDetail;
     ultimate: SkillDetail;
   };
-  upgradeMaterials?: Record<string, string>;
+  upgradeMaterials?: TrekkerMaterial;
   archive?: TrekkerArchive;
 }

@@ -1,5 +1,5 @@
 import type { ExtendedTrekkerInterface } from "../trekkerInterface";
-import { RarityEnum, ElementEnum, CombatTypeEnum, FeatureTypeEnum, FactionEnum, StyleEnum } from "../trekkerInterface";
+import { RarityEnum, ElementEnum, CombatTypeEnum, FeatureTypeEnum, FactionEnum, StyleEnum, TrekkerTierUpMaterialEnum, TrekkerSkillMaterialEnum } from "../trekkerInterface";
 
 export default {
   id: "ann",
@@ -9,5 +9,18 @@ export default {
   combatType: CombatTypeEnum.Melee,
   featureType: FeatureTypeEnum.Support,
   faction: FactionEnum["Freelance Trekker"],
-  style: StyleEnum.Adventurous
+  style: StyleEnum.Adventurous,
+
+  profile: '-',
+
+  stats: {
+    hp: 73479,
+    atk: 5391,
+    def: 190,
+  },
+
+  upgradeMaterials: {
+    tierUpTrial: TrekkerTierUpMaterialEnum.GrotesqueDancer,
+    skillTrial: TrekkerSkillMaterialEnum.ShooterGameCartridge
+  }
 } satisfies ExtendedTrekkerInterface;

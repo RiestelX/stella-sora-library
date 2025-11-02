@@ -1,7 +1,7 @@
 import { StepBack, Heart, Sword, Shield } from "lucide-react";
 import { useNavigate, useParams } from "react-router";
 import { trekkers } from "~/data";
-import type { ExtendedTrekkerInterface, SkillDetail } from "~/data/trekkerInterface";
+import { TrekkerTierUpMaterialEnum, TrekkerSkillMaterialEnum, type ExtendedTrekkerInterface, type SkillDetail } from "~/data/trekkerInterface";
 import { featureColors, elementColots } from "~/components/trekkerCard";
 
 export default function TrekkerDetailPage() {
@@ -65,6 +65,54 @@ export default function TrekkerDetailPage() {
       />
     </svg>
   );
+
+  function MaterialSection({title, materialSet, enumRef, basePath,}: {
+    title: string;
+    materialSet?: Record<string, string>;
+    enumRef: Record<string, any>;
+    basePath: string;
+  }) {
+    if (!materialSet) return null;
+
+    const folder = Object.keys(enumRef).find(key => enumRef[key as keyof typeof enumRef] === materialSet)?.replace(/([a-z])([A-Z])/g, "$1_$2").toLowerCase();
+
+    const readableFolderName = folder ? folder.split("_").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ") : title;
+
+    return (
+      <div className="pb-3">
+        <h3 className="text-sm font-semibold text-white m-2 pl-4">{readableFolderName}</h3>
+        <div className="flex justify-center gap-4">
+          {["Basic", "Intermediate", "Advanced"].map(tier => {
+            const fileName = materialSet[tier];
+            if (!fileName) return null;
+
+            const src = `${import.meta.env.BASE_URL}icons/material/${basePath}/${folder}/${fileName}`;
+            const readableName = fileName
+              .replace(/advanced_|basic_|intermediate_/i, "")
+              .replace(/_/g, " ")
+              .replace(/\b(\w)/g, m => m.toUpperCase())
+              .replace(/Counts/i, "Count's")
+              .replace(".Png", "")
+              .trim();
+
+            return (
+              <div key={tier} className="relative group flex flex-col items-center">
+                <img
+                  src={src}
+                  alt={readableName}
+                  className="w-16 h-16 rounded-md border border-gray-700 shadow-md object-contain hover:border-[#17c9d3] transition"
+                />
+                <div className="absolute bottom-full mb-2 w-max max-w-[12rem] px-3 py-1.5 rounded-lg bg-white text-[#2E4B84] text-sm font-semibold shadow-lg ring-1 ring-gray-300 opacity-0 group-hover:opacity-100 transform group-hover:-translate-y-1 transition-all pointer-events-none whitespace-nowrap z-50">
+                  {readableName}
+                  <div className="absolute left-1/2 top-full -translate-x-1/2 w-2 h-2 bg-white rotate-45 ring-1 ring-gray-300" />
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="text-white container">
@@ -146,44 +194,52 @@ export default function TrekkerDetailPage() {
             </p>
           </div>
         </div>
-
-        <section className="relative w-full lg:w-80">
-          <div className="flex justify-between items-center bg-[#17c9d3] px-4 py-1">
-            <h2 className="text-white font-bold text-lg">Stats (Trekker Level 90)</h2>
-          </div>
-
-          <div className="flex flex-col gap-2 py-3">
-            <div className="relative flex items-center rounded-full border-2 border-[#0abdc3] bg-white pl-12 pr-4 py-1">
-              <div className="absolute inset-y-0 left-0 w-10 bg-[#0abdc3] -skew-x-12 origin-left rounded-l-full flex items-center justify-center">
-                <div className="skew-x-12">
-                  <Heart color="#ffffff" />
-                </div>
-              </div>
-              <span className="text-[#2E4B84] font-semibold">HP</span>
-              <span className="ml-auto text-[#2E4B84] font-bold">{safeStats.hp}</span>
+        <div className="flex flex-col lg:flex-row gap-6 w-full lg:w-[32rem] justify-between">
+          <section className="relative flex-1 max-w-[18rem]">
+            <div className="flex justify-between items-center bg-[#17c9d3] px-4 py-1">
+              <h2 className="text-white font-bold text-lg">Stats (Trekker Level 90)</h2>
             </div>
 
-            <div className="relative flex items-center rounded-full border-2 border-[#0abdc3] bg-white pl-12 pr-4 py-1">
-              <div className="absolute inset-y-0 left-0 w-10 bg-[#0abdc3] -skew-x-12 origin-left rounded-l-full flex items-center justify-center">
-                <div className="skew-x-12">
-                  <Sword color="#ffffff" />
+            <div className="flex flex-col gap-2 py-3">
+              {[
+                { label: "HP", icon: Heart, value: safeStats.hp },
+                { label: "ATK", icon: Sword, value: safeStats.atk },
+                { label: "DEF", icon: Shield, value: safeStats.def },
+              ].map(({ label, icon: Icon, value }) => (
+                <div
+                  key={label}
+                  className="relative flex items-center rounded-full border-2 border-[#0abdc3] bg-white pl-12 pr-4 py-1"
+                >
+                  <div className="absolute inset-y-0 left-0 w-10 bg-[#0abdc3] -skew-x-12 origin-left rounded-l-full flex items-center justify-center">
+                    <div className="skew-x-12">
+                      <Icon color="#ffffff" />
+                    </div>
+                  </div>
+                  <span className="text-[#2E4B84] font-semibold">{label}</span>
+                  <span className="ml-auto text-[#2E4B84] font-bold">{value}</span>
                 </div>
-              </div>
-              <span className="text-[#2E4B84] font-semibold">ATK</span>
-              <span className="ml-auto text-[#2E4B84] font-bold">{safeStats.atk}</span>
+              ))}
             </div>
+          </section>
 
-            <div className="relative flex items-center rounded-full border-2 border-[#0abdc3] bg-white pl-12 pr-4 py-1">
-              <div className="absolute inset-y-0 left-0 w-10 bg-[#0abdc3] -skew-x-12 origin-left rounded-l-full flex items-center justify-center">
-                <div className="skew-x-12">
-                  <Shield color="#ffffff" />
-                </div>
-              </div>
-              <span className="text-[#2E4B84] font-semibold">DEF</span>
-              <span className="ml-auto text-[#2E4B84] font-bold">{safeStats.def}</span>
+          <section className="flex-1 bg-gray-800/60 rounded-lg border border-gray-700 overflow-visible relative">
+            <div className="divide-y divide-gray-700">
+              <MaterialSection
+                title="Tier-Up Materials"
+                materialSet={trekker.upgradeMaterials?.tierUpTrial}
+                enumRef={TrekkerTierUpMaterialEnum}
+                basePath="tier-up/trekker"
+              />
+
+              <MaterialSection
+                title="Skill Materials"
+                materialSet={trekker.upgradeMaterials?.skillTrial}
+                enumRef={TrekkerSkillMaterialEnum}
+                basePath="skill"
+              />
             </div>
-          </div>
-        </section>
+          </section>
+        </div>
       </div>
 
       <section className="mt-8 bg-gray-800/60 rounded-lg p-4 border border-gray-700">
@@ -262,7 +318,7 @@ export default function TrekkerDetailPage() {
             <h3 className="font-semibold text-white mb-2">Reason</h3>
             <p className="text-sm italic">{safeArchive.reason ?? "-"}</p>
 
-            <h3 className="font-semibold text-white mt-4 mb-2">Voice Excerpt</h3>
+            <h3 className="font-semibold text-white mt-4 mb-2">CV Excerpt</h3>
             {Object.keys(safeArchive.cvexcerpt).length > 0 ? (
               Object.values(safeArchive.cvexcerpt).map((entry: any, idx) => (
                 <div key={idx} className="mb-2">
@@ -271,7 +327,7 @@ export default function TrekkerDetailPage() {
                 </div>
               ))
             ) : (
-              <p className="text-gray-400 italic">No voice excerpts available.</p>
+              <p className="text-gray-400 italic">No cv excerpts available.</p>
             )}
           </div>
         </div>

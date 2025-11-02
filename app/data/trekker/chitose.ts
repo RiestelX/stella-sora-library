@@ -1,12 +1,5 @@
 import type { ExtendedTrekkerInterface } from "../trekkerInterface";
-import {
-  RarityEnum,
-  ElementEnum,
-  CombatTypeEnum,
-  FeatureTypeEnum,
-  FactionEnum,
-  StyleEnum,
-} from "../trekkerInterface";
+import { RarityEnum, ElementEnum, CombatTypeEnum, FeatureTypeEnum, FactionEnum, StyleEnum, TrekkerTierUpMaterialEnum, TrekkerSkillMaterialEnum } from "../trekkerInterface";
 
 export default {
   id: "chitose",
@@ -18,13 +11,17 @@ export default {
   faction: FactionEnum["Freelance Trekker"],
   style: StyleEnum.Inquisitive,
 
-  profile: "Chitose is a formidable warrior who sees herself as the blade, with a presence as sharp as steel. Her blade can summon flowing currents, shaping them into water serpents that crash through enemy lines.",
+  profile: 'Chitose is a formidable warrior who sees herself as the blade, with a presence as sharp as steel. Her blade can summon flowing currents, shaping them into water serpents that crash through enemy lines.',
 
   stats: {
-    levelCap: 90,
     hp: 87563,
     atk: 7542,
     def: 190,
+  },
+
+  upgradeMaterials: {
+    tierUpTrial: TrekkerTierUpMaterialEnum.GrotesqueDancer,
+    skillTrial: TrekkerSkillMaterialEnum.ShooterGameCartridge
   },
 
   skills: {
@@ -122,10 +119,6 @@ export default {
       detailsBrief: "",
       details: "",
     },
-  },
-
-  upgradeMaterials: {
-    trial: "Grotesque Dancer",
   },
 
   archive: {

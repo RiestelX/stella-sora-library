@@ -1,5 +1,5 @@
 import type { ExtendedTrekkerInterface } from "../trekkerInterface";
-import { RarityEnum, ElementEnum, CombatTypeEnum, FeatureTypeEnum, FactionEnum, StyleEnum } from "../trekkerInterface";
+import { RarityEnum, ElementEnum, CombatTypeEnum, FeatureTypeEnum, FactionEnum, StyleEnum, TrekkerTierUpMaterialEnum, TrekkerSkillMaterialEnum } from "../trekkerInterface";
 
 export default {
   id: "chixia",
@@ -9,5 +9,18 @@ export default {
   combatType: CombatTypeEnum.Melee,
   featureType: FeatureTypeEnum.Versatile,
   faction: FactionEnum["Yunji Studio"],
-  style: StyleEnum.Collector
+  style: StyleEnum.Collector,
+
+  profile: '-',
+
+  stats: {
+    hp: 49164,
+    atk: 7254,
+    def: 190,
+  },
+
+  upgradeMaterials: {
+    tierUpTrial: TrekkerTierUpMaterialEnum.GrotesqueDancer,
+    skillTrial: TrekkerSkillMaterialEnum.FightingGameCartridge
+  }
 } satisfies ExtendedTrekkerInterface;
