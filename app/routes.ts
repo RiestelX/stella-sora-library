@@ -4,6 +4,7 @@ export default [
   index("routes/home.tsx"),
 
   route("trekker", "routes/trekker.tsx"),
+  route("trekker/:id", "routes/trekkerDetail.tsx"),
   route("disc", "routes/disc.tsx"),
   route("guide", "routes/guide.tsx"),
   route("tier-list", "routes/tierlist.tsx"),

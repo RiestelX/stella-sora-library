@@ -1,6 +1,7 @@
+import { Link } from "react-router";
 import type { TrekkerInterface } from "~/data/trekkerInterface";
 
-const featureColors: Record<string, string> = {
+export const featureColors: Record<string, string> = {
   Vanguard: "#E66696",
   Support: "#41CAAE",
   Versatile: "#7A83E3",
@@ -18,6 +19,15 @@ const elementIcons: Record<string, string> = {
   Ventus: "ventus",
   Lux: "lux",
   Umbra: "umbra",
+};
+
+export const elementColots: Record<string, string> = {
+  Aqua: "#3CA5CC",
+  Ignis: "#CC4626",
+  Terra: "#996842",
+  Ventus: "#7BA32E",
+  Lux: "#D28E3C",
+  Umbra: "#9E4F93",
 };
 
 function StarIcon() {
@@ -39,19 +49,20 @@ export default function TrekkerCard({ trekker }: { trekker: TrekkerInterface }) 
     rarityGradients[trekker.rarity] || "from-gray-300 to-gray-100";
 
   return (
-    <div className="relative w-[160px] h-[220px] rounded-lg overflow-hidden hover:scale-[1.03] transition-transform">
+    <Link
+      to={`/trekker/${trekker.id}`}
+      className="relative w-[160px] h-[220px] rounded-lg overflow-hidden hover:scale-[1.03] transition-transform block"
+    >
       <div
         className={`absolute inset-0 bg-gradient-to-r ${rarityGradient} pt-[8px] pb-[16px] rounded-lg`}
       >
         <div className="relative w-full h-full bg-sky-200 overflow-hidden">
-          {/* trekker */}
           <img
             src={trekker.icon}
             alt={trekker.name}
             className="w-full h-full object-cover scale-105"
           />
 
-          {/* feature type + combat type */}
           <div className="absolute top-1 right-1 flex items-center">
             <div
               className="flex items-center text-white text-xs font-bold px-2 py-[3px] rounded-l-md"
@@ -71,7 +82,6 @@ export default function TrekkerCard({ trekker }: { trekker: TrekkerInterface }) 
             </div>
           </div>
 
-          {/* name */}
           <div className="absolute bottom-0 left-0 right-0 flex justify-end items-end px-1 pb-[2px]">
             <div className="absolute inset-x-0 bottom-0 h-[40px] bg-gradient-to-t from-gray-200/90 to-transparent pointer-events-none" />
             <span className="text-[#2E4B84] font-bold text-xl translate-y-[1px] relative z-10">
@@ -81,7 +91,6 @@ export default function TrekkerCard({ trekker }: { trekker: TrekkerInterface }) 
         </div>
       </div>
 
-      {/* element icon */}
       <div className="absolute -top-0.5 -left-0.5 z-20 drop-shadow-md">
         <img
           src={`${import.meta.env.BASE_URL}icons/element/Icon_common_${elementIcons[
@@ -91,6 +100,6 @@ export default function TrekkerCard({ trekker }: { trekker: TrekkerInterface }) 
           className="w-12 h-12"
         />
       </div>
-    </div>
+    </Link>
   );
 }
