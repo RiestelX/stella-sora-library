@@ -194,7 +194,7 @@ export default function TrekkerDetailPage() {
             </p>
           </div>
         </div>
-        <div className="flex flex-col lg:flex-row gap-6 w-full lg:w-[32rem] justify-between">
+        <div className="flex flex-col 2xl:flex-row gap-6 w-full lg:w-[32rem] justify-between">
           <section className="relative flex-1 max-w-[18rem]">
             <div className="flex justify-between items-center bg-[#17c9d3] px-4 py-1">
               <h2 className="text-white font-bold text-lg">Stats (Trekker Level 90)</h2>
