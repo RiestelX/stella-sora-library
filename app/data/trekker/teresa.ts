@@ -11,7 +11,7 @@ export default {
   faction: FactionEnum["Post Haste"],
   style: StyleEnum.Steady,
 
-  profile: '-',
+  profile: `Teresa has extensive experience in wilderness exploration and understands the importance of conserving stamina.`,
 
   stats: {
     hp: 74091,

@@ -11,7 +11,7 @@ export default {
   faction: FactionEnum["United Harvest"],
   style: StyleEnum.Collector,
 
-  profile: '-',
+  profile: `Ridge is a United Harvest Forester with a habit of stockpiling food. She has a shovel that can fire energy blasts, and she fights alongside the seed plants she scatters on the field.`,
 
   stats: {
     hp: 72867,

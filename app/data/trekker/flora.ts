@@ -11,7 +11,7 @@ export default {
   faction: FactionEnum["Freelance Trekker"],
   style: StyleEnum.Collector,
 
-  profile: '-',
+  profile: `Flora goes on tour in Nova to perform her original magic performance. Her fiery butterflies may seem fragile, but they are perfect fire starters that can burn her enemies into ashes.`,
 
   stats: {
     hp: 43962,

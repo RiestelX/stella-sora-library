@@ -11,7 +11,7 @@ export default {
   faction: FactionEnum["Fenghuang Diner"],
   style: StyleEnum.Adventurous,
 
-  profile: '-',
+  profile: `A doctor obsessed with researching strange malady. She wields a scythe, dispenses deadly poisons, and moves through the battlefield with grace.`,
 
   stats: {
     hp: 73479,

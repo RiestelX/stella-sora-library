@@ -3,6 +3,7 @@
 @layer base {
   html,
   body {
+    font-family: "Inter", "Noto Sans JP", sans-serif;
     @apply bg-[#1e1f25] text-gray-200;
   }
 }

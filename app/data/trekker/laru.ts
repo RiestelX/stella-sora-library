@@ -11,7 +11,7 @@ export default {
   faction: FactionEnum["Grace Imperium"],
   style: StyleEnum.Adventurous,
 
-  profile: '-',
+  profile: `Cutting through her enemies with her spear of thunder, Laru is a flash darting across the battlefield. Here, her free spirit is out in full force.`,
 
   stats: {
     hp: 78990,

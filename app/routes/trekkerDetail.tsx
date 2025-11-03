@@ -80,7 +80,7 @@ export default function TrekkerDetailPage() {
 
     return (
       <div className="pb-3">
-        <h3 className="text-sm font-semibold text-white m-2 pl-4">{readableFolderName}</h3>
+        <h3 className="text-sm font-semibold text-white m-2 pl-1">{readableFolderName}</h3>
         <div className="flex justify-center gap-4">
           {["Basic", "Intermediate", "Advanced"].map(tier => {
             const fileName = materialSet[tier];
@@ -102,7 +102,7 @@ export default function TrekkerDetailPage() {
                   alt={readableName}
                   className="w-16 h-16 rounded-md border border-gray-700 shadow-md object-contain hover:border-[#17c9d3] transition"
                 />
-                <div className="absolute bottom-full mb-2 w-max max-w-[12rem] px-3 py-1.5 rounded-lg bg-white text-[#2E4B84] text-sm font-semibold shadow-lg ring-1 ring-gray-300 opacity-0 group-hover:opacity-100 transform group-hover:-translate-y-1 transition-all pointer-events-none whitespace-nowrap z-50">
+                <div className="absolute bottom-full mb-2 px-3 py-1.5 rounded-lg bg-white text-[#2E4B84] text-sm font-semibold shadow-lg ring-1 ring-gray-300 opacity-0 group-hover:opacity-100 transform group-hover:-translate-y-1 transition-all pointer-events-none whitespace-nowrap z-50">
                   {readableName}
                   <div className="absolute left-1/2 top-full -translate-x-1/2 w-2 h-2 bg-white rotate-45 ring-1 ring-gray-300" />
                 </div>
@@ -189,7 +189,7 @@ export default function TrekkerDetailPage() {
               </span>
             </div>
 
-            <p className="text-gray-200 italic leading-relaxed max-w-2xl">
+            <p className="text-gray-200 leading-relaxed max-w-2xl">
               {trekker.profile ?? "-"}
             </p>
           </div>

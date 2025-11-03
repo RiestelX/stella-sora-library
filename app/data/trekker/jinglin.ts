@@ -11,7 +11,7 @@ export default {
   faction: FactionEnum["Fenghuang Diner"],
   style: StyleEnum.Inquisitive,
 
-  profile: '-',
+  profile: `Jinglin can summon lightning and fill the area around her with golden strikes. Though there is no consensus on the origin of this power, Jinglin herself believes that it was granted to her by the Divine Tree in Cang Wu city.`,
 
   stats: {
     hp: 44695,

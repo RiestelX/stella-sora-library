@@ -11,7 +11,7 @@ export default {
   faction: FactionEnum["Imperial Guard"],
   style: StyleEnum.Steady,
 
-  profile: '-',
+  profile: `Tilia will always be charging at the forefront, using her shield to protect everyone. Guess only another Imperial Knight might break through her defense.`,
 
   stats: {
     hp: 79602,

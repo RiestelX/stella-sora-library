@@ -11,7 +11,7 @@ export default {
   faction: FactionEnum["Freelance Trekker"],
   style: StyleEnum.Creative,
 
-  profile: '-',
+  profile: `Enchanted by the music in the Monolith, the virtuoso bassist dazzles her audience with ease. Not even Stellaroids or monsters can withstand the shockwaves she creates.`,
 
   stats: {
     hp: 47992,

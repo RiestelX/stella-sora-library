@@ -11,7 +11,7 @@ export default {
   faction: FactionEnum["Scarlet Sights Media"],
   style: StyleEnum.Creative,
 
-  profile: 'Mistique is the witch of Scarlet Sights Media. She has two summons that help her strike down her enemies in exchange for their "sustenance": Real news and truth.',
+  profile: `Mistique is the witch of Scarlet Sights Media. She has two summons that help her strike down her enemies in exchange for their "sustenance": Real news and truth.`,
 
   stats: {
     hp: 48761,

@@ -11,7 +11,7 @@ export default {
   faction: FactionEnum["Freelance Trekker"],
   style: StyleEnum.Inquisitive,
 
-  profile: 'Chitose is a formidable warrior who sees herself as the blade, with a presence as sharp as steel. Her blade can summon flowing currents, shaping them into water serpents that crash through enemy lines.',
+  profile: `Chitose is a formidable warrior who sees herself as the blade, with a presence as sharp as steel. Her blade can summon flowing currents, shaping them into water serpents that crash through enemy lines.`,
 
   stats: {
     hp: 87563,

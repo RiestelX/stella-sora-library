@@ -11,7 +11,7 @@ export default {
   faction: FactionEnum["Ashwind Clan"],
   style: StyleEnum.Steady,
 
-  profile: '-',
+  profile: `As the leader of the Ashwind Clan, Minova rarely operates alone. Her greatest asset in battle is not her skateboard or baseball bat, but her companions.`,
 
   stats: {
     hp: 83522,

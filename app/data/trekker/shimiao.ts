@@ -11,7 +11,7 @@ export default {
   faction: FactionEnum["Baize Bureau"],
   style: StyleEnum.Inquisitive,
 
-  profile: '-',
+  profile: `In addition to offering long-term on-site support to her companions, Shimiao is also skilled at handling problems herself. Perhaps this is why she embodies the perfect secretary.`,
 
   stats: {
     hp: 78990,

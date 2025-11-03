@@ -11,7 +11,7 @@ export default {
   faction: FactionEnum["Freelance Trekker"],
   style: StyleEnum.Inquisitive,
 
-  profile: '-',
+  profile: `Whether the steel claws she'd scavenged or the left hand imbued with special magic, Cosette uses her weapons to break the chains of fate.`,
 
   stats: {
     hp: 74704,

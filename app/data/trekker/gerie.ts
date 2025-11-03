@@ -11,7 +11,7 @@ export default {
   faction: FactionEnum["Grace Imperium"],
   style: StyleEnum.Inquisitive,
 
-  profile: '-',
+  profile: `Gerie brandishes her chain- shovel "Mercy" with reckless abandon on the battlefield, crushing swathes of foes. She sows terror into her opponent's soul before delivering judgment.`,
 
   stats: {
     hp: 88236,

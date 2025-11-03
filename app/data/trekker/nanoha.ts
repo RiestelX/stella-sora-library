@@ -11,7 +11,7 @@ export default {
   faction: FactionEnum["Goodwind Homecare"],
   style: StyleEnum.Inquisitive,
 
-  profile: 'Nanoha is a maid working at Goodwind who is also skilled in "Flower" Ninjutsu. She takes pride in her Sunflower Shuriken, which can hit its target while moving at high speed.',
+  profile: `Nanoha is a maid working at Goodwind who is also skilled in "Flower" Ninjutsu. She takes pride in her Sunflower Shuriken, which can hit its target while moving at high speed.`,
 
   stats: {
     hp: 51179,

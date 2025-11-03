@@ -11,7 +11,7 @@ export default {
   faction: FactionEnum["Freelance Trekker"],
   style: StyleEnum.Adventurous,
 
-  profile: '-',
+  profile: `Coco the Firefang is Ann's best friend. Wind is also Ann's friend. With help from these friends, Ann is the fastest Trekker around.`,
 
   stats: {
     hp: 73479,

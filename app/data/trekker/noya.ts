@@ -11,7 +11,7 @@ export default {
   faction: FactionEnum["New Star Guild"],
   style: StyleEnum.Creative,
 
-  profile: '-',
+  profile: `Noya uses techniques no one has ever seen, learned from an unknown source. Even skill-casting does not interrupt her long sword's movements.`,
 
   stats: {
     hp: 79602,

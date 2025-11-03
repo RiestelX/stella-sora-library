@@ -11,7 +11,7 @@ export default {
   faction: FactionEnum["Grace Imperium"],
   style: StyleEnum.Adventurous,
 
-  profile: '-',
+  profile: `The legendary "Devil Teacher" as the students called. Her mysterious laurel bracelet can unleashes unexpected effects in battle.`,
 
   stats: {
     hp: 43962,

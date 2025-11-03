@@ -11,7 +11,7 @@ export default {
   faction: FactionEnum["New Star Guild"],
   style: StyleEnum.Collector,
 
-  profile: 'The agile dual pistols allow Amber to sashay across the battlefield. Enemies who try to get close to her will turn into ashes long before they can reach her perimeter.',
+  profile: `The agile dual pistols allow Amber to sashay across the battlefield. Enemies who try to get close to her will turn into ashes long before they can reach her perimeter.`,
 
   stats: {
     hp: 45794,

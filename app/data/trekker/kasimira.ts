@@ -11,7 +11,7 @@ export default {
   faction: FactionEnum["White Cat Troupe"],
   style: StyleEnum.Adventurous,
 
-  profile: '-',
+  profile: `Kasimira wields a brutal shotgun. She often puts herself in the line of fire in order to get a hit on her enemies. No matter what, her enemy will fall first.`,
 
   stats: {
     hp: 77766,

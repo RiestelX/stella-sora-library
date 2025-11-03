@@ -11,7 +11,7 @@ export default {
   faction: FactionEnum["Yunji Studio"],
   style: StyleEnum.Collector,
 
-  profile: '-',
+  profile: `Nobody would expect a Xuan Shi to be so timid. Her giant writing brush is a modified flamethrower and also her instrument in drawing powerful talismans.`,
 
   stats: {
     hp: 49164,

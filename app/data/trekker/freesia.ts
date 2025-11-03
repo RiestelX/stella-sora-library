@@ -11,7 +11,7 @@ export default {
   faction: FactionEnum["Post Haste"],
   style: StyleEnum.Adventurous,
 
-  profile: 'The ancient "Frenzy" magic fuels Freesia to keep fighting until utter exhaustion. This is the dark side of the usually graceful girl—one that should be kept from others.',
+  profile: `The ancient "Frenzy" magic fuels Freesia to keep fighting until utter exhaustion. This is the dark side of the usually graceful girl—one that should be kept from others.`,
 
   stats: {
     hp: 84195,

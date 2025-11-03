@@ -11,7 +11,7 @@ export default {
   faction: FactionEnum["New Star Guild"],
   style: StyleEnum.Creative,
 
-  profile: '-',
+  profile: `Iris' notebook is filled with magical formulas. Little-trained in close combat, she prefers to use ice to wear down the enemy from a safe distance.`,
 
   stats: {
     hp: 43595,

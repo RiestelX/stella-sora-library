@@ -11,7 +11,7 @@ export default {
   faction: FactionEnum["Petal Bloom Guild"],
   style: StyleEnum.Collector,
 
-  profile: 'Nazuna fights with her trusty hand crossbow and her puppet companions at her side. Her out-of-the-box ideas and uncanny luck always bring pleasant surprises to the squad.',
+  profile: `Nazuna fights with her trusty hand crossbow and her puppet companions at her side. Her out-of-the-box ideas and uncanny luck always bring pleasant surprises to the squad.`,
 
   stats: {
     hp: 52791,
