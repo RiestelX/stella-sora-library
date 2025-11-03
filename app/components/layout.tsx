@@ -8,7 +8,7 @@ export default function AppLayout({ children }: LayoutProps) {
   return (
     <div className="flex h-screen overflow-hidden">
       <Sidebar />
-      <main className="flex-1 p-6 overflow-hidden transition-all duration-300">
+      <main className="flex-1 p-6 overflow-y-auto transition-all duration-300">
         {children}
       </main>
     </div>

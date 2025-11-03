@@ -47,7 +47,7 @@ export default function Trekker() {
 
       <TrekkerFilterBar filters={filters} onChange={handleChange} onReset={handleReset} />
 
-      <div className="grid [grid-template-columns:repeat(auto-fit,minmax(160px,1fr))] gap-4 mt-6">
+    <div className="grid [grid-template-columns:repeat(auto-fill,minmax(160px,1fr))] gap-4 mt-6">
         {filteredTrekkers.map(t => (
           <TrekkerCard key={t.id} trekker={t} />
         ))}
