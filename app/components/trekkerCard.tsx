@@ -51,7 +51,7 @@ export default function TrekkerCard({ trekker }: { trekker: TrekkerInterface }) 
   return (
     <Link
       to={`/trekker/${trekker.id}`}
-      className="relative w-[160px] h-[220px] rounded-lg overflow-hidden hover:scale-[1.03] transition-transform block"
+      className="relative w-[140px] h-[195px] rounded-lg overflow-hidden hover:scale-[1.03] transition-transform block"
     >
       <div
         className={`absolute inset-0 bg-gradient-to-r ${rarityGradient} pt-[8px] pb-[16px] rounded-lg`}

@@ -115,17 +115,17 @@ export default function TrekkerDetailPage() {
   }
 
   return (
-    <div className="text-white container">
+    <div className="min-h-screen text-white">
       <button
         onClick={() => navigate("/trekker")}
-        className="inline-flex items-center gap-2 mb-6 px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-md text-sm font-medium transition-colors"
+        className="inline-flex items-center gap-2 mb-6 -mt-0.5 ms-3 px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-md text-sm font-medium transition-colors"
       >
         <StepBack className="w-4 h-4" />
         Back to List
       </button>
 
-      <div className="flex flex-col lg:flex-row items-start gap-8">
-        <div className="flex flex-col md:flex-row items-center md:items-start gap-6 flex-1">
+      <div className="flex flex-row md:gap-[4rem]">
+        <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
           <img
             src={trekker.icon}
             alt={trekker.name}

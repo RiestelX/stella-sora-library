@@ -19,7 +19,7 @@ export default function TrekkerFilterBar({ filters, onChange, onReset }: Trekker
   const elementIcons = TREKKER_OPTIONS.elements.map(e => e.toLowerCase());
 
   return (
-    <div className="flex flex-wrap items-center gap-3 p-3 bg-gray-900/70 rounded-md border border-gray-700">
+    <div className="flex flex-wrap justify-center items-center gap-3 p-3 bg-gray-900/70 rounded-md border border-gray-700">
       {/* search */}
       <input
         type="text"

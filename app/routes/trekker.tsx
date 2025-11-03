@@ -41,13 +41,13 @@ export default function Trekker() {
 
   return (
     <div className="min-h-screen text-white">
-      <h2 className="text-2xl font-bold mb-4 tracking-wide">
+      <h2 className="text-2xl font-bold mb-4 ms-3 tracking-wide">
         Trekker <span className="text-gray-400 text-sm">({filteredTrekkers.length} total)</span>
       </h2>
 
       <TrekkerFilterBar filters={filters} onChange={handleChange} onReset={handleReset} />
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 2xl:grid-cols-8 gap-4 mt-6">
+      <div className="grid [grid-template-columns:repeat(auto-fit,minmax(160px,1fr))] gap-4 mt-6">
         {filteredTrekkers.map(t => (
           <TrekkerCard key={t.id} trekker={t} />
         ))}

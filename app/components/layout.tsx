@@ -6,10 +6,9 @@ interface LayoutProps {
 
 export default function AppLayout({ children }: LayoutProps) {
   return (
-    <div className="flex h-screen">
+    <div className="flex h-screen overflow-hidden">
       <Sidebar />
-
-      <main className="flex-1 p-6 overflow-y-auto">
+      <main className="flex-1 p-6 overflow-hidden transition-all duration-300">
         {children}
       </main>
     </div>
