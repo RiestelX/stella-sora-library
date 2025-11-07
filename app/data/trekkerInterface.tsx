@@ -118,6 +118,7 @@ export interface SkillStrike {
   template: string;
   value_1?: SkillValue;
   value_2?: SkillValue;
+  value_3?: SkillValue;
 }
 
 export interface SkillDetail {
@@ -138,10 +139,24 @@ export interface TrekkerStats {
   def: number;
 }
 
+interface TalentInfo {
+  title: string;
+  desc: string;
+  value?: string;
+}
+
+export interface TrekkerTalent {
+  bonusPerLevel: Record<string, any>;
+  [level: number]: TalentInfo;
+}
+
 export interface TrekkerArchive {
   basicInfo: Record<string, any>;
   reason: string;
   cvexcerpt: Record<string, { title: string; desc: string }>;
+  peerComments: string;
+  taFeedback: string;
+  appendix: string;
 }
 
 export interface TrekkerMaterial {
@@ -166,6 +181,7 @@ export interface ExtendedTrekkerInterface extends TrekkerInterface {
     support: SkillDetail;
     ultimate: SkillDetail;
   };
+  talent?: TrekkerTalent;
   upgradeMaterials?: TrekkerMaterial;
   archive?: TrekkerArchive;
 }

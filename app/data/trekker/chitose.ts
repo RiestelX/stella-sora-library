@@ -121,6 +121,41 @@ export default {
     },
   },
 
+  talent: {
+    bonusPerLevel: {
+      BaseATK: "+120",
+      ATK: "+3%",
+      BaseDEF: "+20",
+      BaseHP: "+1380",
+      AquaDMG: "+3%"
+    },
+    1: {
+      title: `Tideweaver`,
+      desc: `When Chitose casts her Ultimate, increases her ATK by {{value}} for 20s.`,
+      value: `30%`
+    },
+    2: {
+      title: `Blade in Sleeves`,
+      desc: `Aqua DMG +{{value}} for 8s when Chitose triggers {{aqua_mark}}`,
+      value: `20%`
+    },
+    3: {
+      title: `Tideborn Shadow`,
+      desc: `When Chitose deals DMG to a target with Mirror Images, increases her ATK by {{value}} for 8s, stacking up to 20 times.`,
+      value: `1%`
+    },
+    4: {
+      title: `Afterrain Clarity`,
+      desc: `When Chitose triggers Aqua Mark increases her Ultimate DMG by {{value}}, stacking up to 10 times. This effect is removed after she casts her Ultimate.`,
+      value: `2.2%`
+    },
+    5: {
+      title: `Cloudstrider's Melody`,
+      desc: `Increases Chitose's Aqua DMG dealt to elite or higher-tier targets by {{value}}.`,
+      value: `24%`
+    }
+  },
+
   archive: {
     basicInfo: {
       birthday: "November 3rd",
@@ -136,12 +171,32 @@ export default {
       },
     },
     reason:
-      "To become the sharpest blade in all of Nova with Boss as my Wielder.",
+      "To become the sharpest blade in all of Nova with Boss as my Wielder",
     cvexcerpt: {
       1: {
-        title: "The Basic Standard for a Wielder",
-        desc: "One who is not harmed by my aura of edge.",
+        title: `The Basic Standard for a Wielder`,
+        desc: `One who is not harmed by my aura of edge.`,
+      },
+      2: { 
+        title: `Parents and Master`,
+        desc: `The twin blades on my back are "Father and Mother," while the odachi is "Master." 
+        My own strength is still lacking, and I have yet to truly become a worthy blade. Thus I must still rely on their power.`,
+      },
+      3: {
+        title: `Amekiku`,
+        desc: `A once-abandoned traveler's inn on the outskirts of the City of a Thousand Monoliths, later refurbished by Chitose into something resembling a dojo and given the name "Amekiku." 
+        Chitose usually offers conveniences here to passing Trekkers, including but not limited to weather forecasts and tea service. 
+        —From the words of Trekkers passing through`,
+      },
+      4: {
+        title: `Amekiku`,
+        desc: `A once-abandoned traveler's inn on the outskirts of the City of a Thousand Monoliths, later refurbished by Chitose into something resembling a dojo and given the name "Amekiku." 
+        Chitose usually offers conveniences here to passing Trekkers, including but not limited to weather forecasts and tea service. 
+        —From the words of Trekkers passing through`,
       },
     },
+    peerComments: `-`,
+    taFeedback: `-`,
+    appendix: `-`
   },
 } satisfies ExtendedTrekkerInterface;
